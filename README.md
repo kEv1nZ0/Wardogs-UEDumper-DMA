@@ -119,16 +119,6 @@ UEDumper/       入口点与 Visual Studio 工程
 
 项目不捆绑也不引用任何内核驱动。
 
-## 测试
-
-```powershell
-powershell -ExecutionPolicy Bypass -File Tests/Run.ps1
-```
-
-在 `x64/dma-tests/` 里用 mock VMM DLL 跑，覆盖 DMA 生命周期、按进程名和 PID 选择、局部读、缓存恢复、稀疏模块拷贝，以及本机 RPM 后端。名称池部分覆盖块遍历、50 万以上的 ID、修改过的 entry 分配长度、UTF-16、游标边界、分配器回绕和读写失败。最后用真实 exe 通过 DMA API 解析 10 个合成对象名。
-
-这些测试不需要硬件，但也不能证明偏移匹配任何真实构建，那一步只能上机验。
-
 ## 已知限制
 
 - 转储面对的是活动进程，已释放或半初始化的对象会读出垃圾。Outer / Super / FField 链遍历带步数保护，指针也做了规范性过滤，但 `ObjectsDump.txt` 里偶尔出现垃圾条目是正常的。
@@ -274,16 +264,6 @@ UEDumper/       entry point and Visual Studio project
 ```
 
 No kernel driver is bundled or referenced anywhere in this project.
-
-## Tests
-
-```powershell
-powershell -ExecutionPolicy Bypass -File Tests/Run.ps1
-```
-
-Runs against a mock VMM DLL in `x64/dma-tests/`, covering the DMA lifecycle, process-name and PID selection, partial reads, cache recovery, sparse module copies, and the local RPM backend. The name-pool tests cover block traversal, IDs above 500000, modified entry allocation lengths, UTF-16, cursor boundaries, allocator rollover and failed reads and writes. It finishes by having the real executable resolve 10 synthetic object names through the DMA API.
-
-None of this needs hardware, and none of it proves the offsets match a real build. Only running it on a live target does that.
 
 ## Known limitations
 
