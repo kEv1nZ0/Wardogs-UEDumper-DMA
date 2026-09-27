@@ -154,10 +154,7 @@ FTD3XX.dll 不是只有 FPGA 才需要。`leechcore.dll` 直接导入它，缺�
 
 UEDumper 本体为 MIT，见 [LICENSE](LICENSE)。第三方组件保留各自许可，见 [ThirdParty/MemProcFS/README.md](ThirdParty/MemProcFS/README.md)。
 
----
----
-
-# UEDumper (English)
+# UEDumper
 
 Unreal Engine SDK and offset dumper for Windows x64. It reads the target machine's memory over MemProcFS/LeechCore DMA by default, and can fall back to local ReadProcessMemory.
 
