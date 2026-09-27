@@ -1,0 +1,9 @@
+LIBRARY vmm
+EXPORTS
+    VMMDLL_Initialize
+    VMMDLL_Close
+    VMMDLL_ConfigSet
+    VMMDLL_ProcessGetInformationAll
+    VMMDLL_Map_GetModuleFromNameU
+    VMMDLL_MemFree
+    VMMDLL_MemReadEx

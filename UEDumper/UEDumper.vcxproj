@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>17.0</VCProjectVersion>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectGuid>{7a1d5c3e-92b4-4f6a-8e21-5c0d4b7f9a13}</ProjectGuid>
+    <RootNamespace>UEDumper</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Platform)'=='x64'">
+    <OutDir>$(SolutionDir)x64\$(Configuration)-DMA\</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <IncludePath>$(SolutionDir);$(SolutionDir)Memory;$(SolutionDir)Code;$(ProjectDir);$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <IncludePath>$(SolutionDir);$(SolutionDir)Memory;$(SolutionDir)Code;$(ProjectDir);$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <AdditionalOptions>/utf-8 %(AdditionalOptions)</AdditionalOptions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_SILENCE_ALL_CXX17_DEPRECATION_WARNINGS;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <AdditionalOptions>/utf-8 %(AdditionalOptions)</AdditionalOptions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\Code\Core\Engine.cpp" />
+    <ClCompile Include="..\Code\Core\Process.cpp" />
+    <ClCompile Include="..\Memory\Memory.cpp" />
+    <ClCompile Include="..\Memory\RpmBackend.cpp" />
+    <ClCompile Include="..\Memory\DmaBackend.cpp" />
+    <ClCompile Include="Main.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\Code\Core\Data.h" />
+    <ClInclude Include="..\Code\Core\DumpOffset.h" />
+    <ClInclude Include="..\Code\Core\Engine.h" />
+    <ClInclude Include="..\Code\Core\Enums.h" />
+    <ClInclude Include="..\Code\Core\GName.h" />
+    <ClInclude Include="..\Code\Core\GObject.h" />
+    <ClInclude Include="..\Code\Core\Offset.h" />
+    <ClInclude Include="..\Code\Core\OffsetsConfig.h" />
+    <ClInclude Include="..\Code\Core\Process.h" />
+    <ClInclude Include="..\Code\Core\Wrappers.h" />
+    <ClInclude Include="..\Memory\IBackend.h" />
+    <ClInclude Include="..\Memory\Memory.h" />
+    <ClInclude Include="..\Memory\RpmBackend.h" />
+    <ClInclude Include="..\Memory\DmaBackend.h" />
+    <ClInclude Include="..\ThirdParty\MemProcFS\include\vmmdll.h" Condition="Exists('$(ProjectDir)..\ThirdParty\MemProcFS\include\vmmdll.h')" />
+    <ClInclude Include="..\ThirdParty\MemProcFS\include\leechcore.h" Condition="Exists('$(ProjectDir)..\ThirdParty\MemProcFS\include\leechcore.h')" />
+  </ItemGroup>
+  <!-- The DMA runtime is fetched by scripts/Fetch-MemProcFS.ps1 and is never
+       committed: MemProcFS is AGPL-3.0, LeechCore is GPL-3.0, and FTD3XX.dll is
+       FTDI proprietary. All five files are required - FTD3XX.dll is imported by
+       leechcore.dll, so the backend cannot load without it. -->
+  <ItemGroup>
+    <DmaRuntime Include="$(ProjectDir)..\ThirdParty\MemProcFS\bin\vmm.dll" Condition="Exists('$(ProjectDir)..\ThirdParty\MemProcFS\bin\vmm.dll')" />
+    <DmaRuntime Include="$(ProjectDir)..\ThirdParty\MemProcFS\bin\leechcore.dll" Condition="Exists('$(ProjectDir)..\ThirdParty\MemProcFS\bin\leechcore.dll')" />
+    <DmaRuntime Include="$(ProjectDir)..\ThirdParty\MemProcFS\bin\FTD3XX.dll" Condition="Exists('$(ProjectDir)..\ThirdParty\MemProcFS\bin\FTD3XX.dll')" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\config.ini" />
+  </ItemGroup>
+  <Target Name="RequireX64" BeforeTargets="PrepareForBuild" Condition="'$(Platform)'!='x64'">
+    <Error Text="UEDumper DMA requires the x64 platform and x64 MemProcFS runtime." />
+  </Target>
+  <Target Name="RequireDmaRuntime" BeforeTargets="ClCompile" Condition="'$(Platform)'=='x64'">
+    <Error Condition="!Exists('$(ProjectDir)..\ThirdParty\MemProcFS\include\vmmdll.h') or !Exists('$(ProjectDir)..\ThirdParty\MemProcFS\include\leechcore.h') or !Exists('$(ProjectDir)..\ThirdParty\MemProcFS\bin\vmm.dll') or !Exists('$(ProjectDir)..\ThirdParty\MemProcFS\bin\leechcore.dll') or !Exists('$(ProjectDir)..\ThirdParty\MemProcFS\bin\FTD3XX.dll')"
+           Text="The DMA runtime is incomplete (vmmdll.h, leechcore.h, vmm.dll, leechcore.dll and FTD3XX.dll are all required). Run:  powershell -ExecutionPolicy Bypass -File scripts\Fetch-MemProcFS.ps1" />
+  </Target>
+  <Target Name="DeployDmaRuntime" AfterTargets="Build" Condition="'$(Platform)'=='x64'">
+    <Copy SourceFiles="@(DmaRuntime)" DestinationFolder="$(OutDir)" SkipUnchangedFiles="true" Condition="'@(DmaRuntime)'!=''" />
+    <Copy SourceFiles="$(ProjectDir)..\config.ini" DestinationFiles="$(OutDir)config.ini" Condition="!Exists('$(OutDir)config.ini')" />
+    <Copy SourceFiles="$(ProjectDir)..\config.ini" DestinationFiles="$(OutDir)config.example.ini" SkipUnchangedFiles="true" />
+  </Target>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
